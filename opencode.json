@@ -1,15 +1,15 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "model": "nvidia/z-ai/glm-5.2",
+  "plugin": ["__MODEL_FALLBACK_PLUGIN_PATH__"],
   "provider": {
     "nvidia": {
       "npm": "@ai-sdk/openai-compatible",
       "name": "NVIDIA Build (NIM)",
       "options": {
         "baseURL": "https://integrate.api.nvidia.com/v1",
-        "apiKey": "{env:NVIDIA_API_KEY}",
         "timeout": 600000,
-        "chunkTimeout": 60000
+        "chunkTimeout": 300000
       },
       "models": {
         "z-ai/glm-5.2": {
@@ -17,11 +17,6 @@
           "reasoning": true,
           "tool_call": true,
           "limit": { "context": 1048576, "output": 131072 }
-        },
-        "qwen/qwen3-coder-480b-a35b-instruct": {
-          "name": "Qwen3 Coder 480B",
-          "tool_call": true,
-          "limit": { "context": 262144, "output": 65536 }
         },
         "deepseek-ai/deepseek-v4-pro": {
           "name": "DeepSeek V4 Pro",
