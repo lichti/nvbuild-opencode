@@ -1,0 +1,24 @@
+{
+  "enabled": true,
+  "cooldownMs": 60000,
+  "fallbackMode": "cycle",
+  "fallbackModels": [
+    { "providerID": "nvidia", "modelID": "z-ai/glm-5.2" },
+    { "providerID": "nvidia", "modelID": "qwen/qwen3-coder-480b-a35b-instruct" },
+    { "providerID": "nvidia", "modelID": "deepseek-ai/deepseek-v4-pro" },
+    { "providerID": "nvidia", "modelID": "deepseek-ai/deepseek-v4-flash" },
+    { "providerID": "nvidia", "modelID": "moonshotai/kimi-k2.6" },
+    { "providerID": "nvidia", "modelID": "minimaxai/minimax-m3" }
+  ],
+  "retryPolicy": {
+    "maxRetries": 4,
+    "strategy": "exponential",
+    "baseDelayMs": 1500,
+    "jitterEnabled": true
+  },
+  "circuitBreaker": {
+    "enabled": true,
+    "failureThreshold": 5,
+    "recoveryTimeoutMs": 60000
+  }
+}

@@ -1,0 +1,8 @@
+# Segredos - nunca commitar chave real
+auth.json
+
+# Rascunhos originais que geraram este projeto (ver docs/escopo.md)
+tmp/
+
+# SO
+.DS_Store
